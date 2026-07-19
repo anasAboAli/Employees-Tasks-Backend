@@ -10,12 +10,11 @@ import crypto from "crypto";
 import cors from "cors";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
-import { UserRole, TaskStatus, TaskPriority } from "./src/types";
-
+import { UserRole, TaskStatus, TaskPriority } from "./src/types.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT) || 5000;
 const DB_FILE = path.join(process.cwd(), "data", "db.json");
 const JWT_SECRET = process.env.JWT_SECRET || "enterprise_employee_management_secret_key_2026";
 
